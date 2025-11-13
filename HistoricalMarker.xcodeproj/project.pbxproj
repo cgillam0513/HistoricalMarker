@@ -6,17 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C65DF5E22EC647A700FA199A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DF5DC2EC647A700FA199A /* ContentView.swift */; };
+		C65DF5E32EC647A700FA199A /* HistoricalMarkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DF5DD2EC647A700FA199A /* HistoricalMarkerApp.swift */; };
+		C65DF5E42EC647A700FA199A /* MarkerMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DF5DE2EC647A700FA199A /* MarkerMapViewModel.swift */; };
+		C65DF5E52EC647A700FA199A /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DF5DF2EC647A700FA199A /* SpeechManager.swift */; };
+		C65DF8652EC647A700FA199A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65DF5DB2EC647A700FA199A /* Assets.xcassets */; };
+		C65DF8662EC647A700FA199A /* tx_historical_markers.json in Resources */ = {isa = PBXBuildFile; fileRef = C65DF5E02EC647A700FA199A /* tx_historical_markers.json */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C625C6EE2EBBB1DB00A45CD2 /* HistoricalMarker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoricalMarker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65DF5DB2EC647A700FA199A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C65DF5DC2EC647A700FA199A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C65DF5DD2EC647A700FA199A /* HistoricalMarkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMarkerApp.swift; sourceTree = "<group>"; };
+		C65DF5DE2EC647A700FA199A /* MarkerMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerMapViewModel.swift; sourceTree = "<group>"; };
+		C65DF5DF2EC647A700FA199A /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		C65DF5E02EC647A700FA199A /* tx_historical_markers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tx_historical_markers.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C625C6F02EBBB1DB00A45CD2 /* HistoricalMarker */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HistoricalMarker;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C625C6EB2EBBB1DB00A45CD2 /* Frameworks */ = {
@@ -32,7 +39,7 @@
 		C625C6E52EBBB1DB00A45CD2 = {
 			isa = PBXGroup;
 			children = (
-				C625C6F02EBBB1DB00A45CD2 /* HistoricalMarker */,
+				C65DF5E12EC647A700FA199A /* HistoricalMarker */,
 				C625C6EF2EBBB1DB00A45CD2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +50,19 @@
 				C625C6EE2EBBB1DB00A45CD2 /* HistoricalMarker.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C65DF5E12EC647A700FA199A /* HistoricalMarker */ = {
+			isa = PBXGroup;
+			children = (
+				C65DF5DB2EC647A700FA199A /* Assets.xcassets */,
+				C65DF5DC2EC647A700FA199A /* ContentView.swift */,
+				C65DF5DD2EC647A700FA199A /* HistoricalMarkerApp.swift */,
+				C65DF5DE2EC647A700FA199A /* MarkerMapViewModel.swift */,
+				C65DF5DF2EC647A700FA199A /* SpeechManager.swift */,
+				C65DF5E02EC647A700FA199A /* tx_historical_markers.json */,
+			);
+			path = HistoricalMarker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +79,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C625C6F02EBBB1DB00A45CD2 /* HistoricalMarker */,
 			);
 			name = HistoricalMarker;
 			packageProductDependencies = (
@@ -109,6 +126,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C65DF8652EC647A700FA199A /* Assets.xcassets in Resources */,
+				C65DF8662EC647A700FA199A /* tx_historical_markers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +138,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C65DF5E22EC647A700FA199A /* ContentView.swift in Sources */,
+				C65DF5E32EC647A700FA199A /* HistoricalMarkerApp.swift in Sources */,
+				C65DF5E42EC647A700FA199A /* MarkerMapViewModel.swift in Sources */,
+				C65DF5E52EC647A700FA199A /* SpeechManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
