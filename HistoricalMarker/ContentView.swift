@@ -14,27 +14,32 @@ struct ContentView: View {
     @StateObject private var speech = SpeechManager()
     @State private var selectedMarker: HistoricalMarker? = nil
     @State private var showDetails: Bool = false
+    
+    private var displayedMarkers: [HistoricalMarker] {
+        viewModel.visibleMarkers.filter { !$0.needsGeocoding }
+    }
 
     var body: some View {
         ZStack(alignment: .top) {
             Map(position: $viewModel.cameraPosition, bounds: MapCameraBounds(minimumDistance: 500)) {
-                ForEach(viewModel.markers) { marker in
+                ForEach(displayedMarkers, id: \.id) { marker in
                     Annotation(marker.title, coordinate: marker.coordinate) {
-                        Button(action: {
+                        Button {
                             selectedMarker = marker
                             showDetails = true
-                        }) {
+                        } label: {
                             ZStack {
-                                Circle().fill(Color.blue.opacity(0.85)).frame(width: 28, height: 28)
+                                Circle()
+                                    .fill(Color.blue.opacity(0.85))
+                                    .frame(width: 28, height: 28)
                                 Image(systemName: "mappin")
                                     .font(.system(size: 14, weight: .bold))
                                     .foregroundStyle(.white)
                             }
-                            .accessibilityLabel(Text(marker.title))
                         }
+                        .accessibilityLabel(marker.title)
                     }
                 }
-                UserAnnotation()
             }
             .mapControls {
                 MapUserLocationButton()
@@ -52,10 +57,14 @@ struct ContentView: View {
                     }
                 }
             }
-            .onChange(of: viewModel.playOverAudio) { _, newValue in
+            .onMapCameraChange { context in
+                viewModel.updateVisibleMarkers(for: context.region)
+            }
+            .onChange(of: viewModel.playOverAudio) { oldValue, newValue in
                 speech.configureAudioSession(playOverOthers: newValue)
             }
-            .onReceive(viewModel.$nearbyMarker.compactMap { $0 }) { marker in
+            .onChange(of: viewModel.nearbyMarker) { oldValue, newValue in
+                guard let marker = newValue else { return }
                 if viewModel.autoReadEnabled {
                     speech.speak(marker: marker)
                 }
